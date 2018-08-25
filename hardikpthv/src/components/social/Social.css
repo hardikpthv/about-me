@@ -1,0 +1,15 @@
+.social {
+  padding: 10px;
+}
+
+.social .list {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social .list .list-item img {
+  padding: 10px;  
+}

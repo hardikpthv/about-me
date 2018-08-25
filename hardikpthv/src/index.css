@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Aclonica|Coming+Soon|Indie+Flower|News+Cycle");
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Indie Flower", cursive;
+  /* font-family: "News Cycle", sans-serif; */
+  /* font-family: "Coming Soon", cursive; */
+  /* font-family: "Aclonica", sans-serif; */
+  color: #fff;
+  background: #396afc;
+  background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+  background: linear-gradient(to right, #2948ff, #396afc);
+}
