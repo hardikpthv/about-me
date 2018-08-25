@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import hardik from "./assets/hardikpthv.png";
 import "./App.css";
+import Profile from "./components/profile/Profile";
 import Social from "./components/social/Social";
 
 class App extends Component {
@@ -9,8 +9,7 @@ class App extends Component {
     return (
       <main role="main" className="main">
         <div className="container">
-          <img src={hardik} className="avatar" alt="avatar" />
-          <h1>Hardik Pithva</h1>
+          <Profile />
           <Social />
         </div>
       </main>
