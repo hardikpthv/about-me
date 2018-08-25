@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import hardik from "./assets/hardikpthv.jpeg";
+import hardik from "./assets/hardikpthv.png";
 import "./App.css";
 import Social from "./components/social/Social";
 
