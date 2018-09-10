@@ -10,8 +10,11 @@
     "url": "https://github.com/hardikpthv/about.git"
   },
   "dependencies": {
+    "@material-ui/core": "^3.0.3",
+    "@material-ui/icons": "^3.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-router": "^4.3.1",
     "react-scripts": "1.1.5"
   },
   "scripts": {
