@@ -1,0 +1,72 @@
+{
+  "next": [
+    {
+      "title": "Dockerize Angular",
+      "description": "It's time for an angular developer to work with Docker to smoothen build and deploy process for any environments.",
+      "type": "Workshop",
+      "lang": "Angular",
+      "hashtags": ["#Angular", "#Docker"]
+    },
+    {
+      "title": "Angular Elements",
+      "description": "You gotta build once and use it anytime, anywhere you want. The angular custom element for better reusability & consistency across all platforms.",
+      "type": "Workshop",
+      "lang": "Angular",
+      "hashtags": ["#Angular", "#WebComponents"]
+    }
+  ],
+  "past": [
+    {
+      "title": "PWA, Tools & Frameworks",
+      "description": "Learn about PWA, tools available for it, and explore frameworks, like Angular, to implement it.",
+      "type": "GDD Extended 2018",
+      "location": "Pune, IN",
+      "date": "Jan. 13, 2018",
+      "lang": "Angular",
+      "coverImage": "assets/images/events/gddx_2018_pune/IMG_3120.JPG",
+      "coverImageAlt": "GDD Extended - Pune Edition",
+      "meetupUrl": "https://www.meetup.com/Pune-GDG/events/246367484/",
+      "slidesUrl": "https://speakerdeck.com/hardikpthv/pwa-tools-and-frameworks",
+      "hashtags": ["#PWA", "#Angular", "#GDDIndia"]
+    },
+    {
+      "title": "Reactive forms in Angular",
+      "description": "Build complex form along with custom form control in a nice and easy way using Angular Reactive Form.",
+      "type": "Google DevFest 2017 (Ahmedabad)",
+      "location": "Mumbai, IN",
+      "date": "Nov. 5, 2017",
+      "lang": "Angular",
+      "coverImage": "assets/images/events/devfest_2017_amd/IMG_2298.JPG",
+      "coverImageAlt": "Reactive forms in Angular",
+      "meetupUrl": "https://www.meetup.com/GDG-Ahmedabad/events/244566041/",
+      "slidesUrl": "https://speakerdeck.com/hardikpthv/reactive-forms-in-angular",
+      "hashtags": ["#Angular", "#DevFest17", "#DevFestAhm"]
+    },
+    {
+      "title": "Materializing Angular",
+      "description": "Create a beautiful and stunning design with Angular Material Component and Flex layout.",
+      "type": "Google DevFest 2017 (Pune)",
+      "location": "Pune, IN",
+      "date": "",
+      "lang": "Angular",
+      "coverImage": "assets/images/events/devfest_2017_pune/DLiGc0hUQAAUIl3.jpg",
+      "coverImageAlt": "Materializing Angular",
+      "meetupUrl": "https://www.meetup.com/Pune-GDG/events/243609642/",
+      "slidesUrl": "https://speakerdeck.com/hardikpthv/materializing-angular",
+      "hashtags": ["#Angular", "#DevFest17", "#GDGPune"]
+    },
+    {
+      "title": "Rise with Angular",
+      "description": "Let's build together the movie app using angular from scratch and deploy it to firebase.",
+      "type": "Workshop",
+      "location": "Mumbai, IN",
+      "date": "",
+      "lang": "Angular",
+      "coverImage": "assets/images/events/rise_with_angular/IMG_1665.JPG",
+      "coverImageAlt": "Rise with Angular",
+      "meetupUrl": "https://www.meetup.com/Rise-Mumbai-open-innovation-programmes/events/242351207/",
+      "slidesUrl": "https://speakerdeck.com/hardikpthv/rise-with-angular",
+      "hashtags": ["#Angular", "#RiseMumbai"]
+    }
+  ]
+}

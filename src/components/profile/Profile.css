@@ -1,0 +1,9 @@
+.profile {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile .avatar {
+  border-radius: 50%;  
+}
