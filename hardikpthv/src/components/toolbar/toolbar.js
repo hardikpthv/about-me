@@ -1,11 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+import { AppBar, IconButton, Toolbar, Typography } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 
 const drawerWidth = 240;
