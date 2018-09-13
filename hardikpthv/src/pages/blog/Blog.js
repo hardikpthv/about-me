@@ -5,14 +5,17 @@ import { withStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 
 import Spinner from "../../components/spinner";
+import Toastr from "../../components/toastr";
 import CommonCard from "../../components/card";
 import BlogService from "./BlogService";
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    paddingLeft: 18,
-    paddingRight: 18
+    padding: "0 18px",
+    [theme.breakpoints.between("xs", "sm")]: {
+      padding: 0
+    }
   }
 });
 
@@ -21,7 +24,12 @@ class Blog extends Component {
     super(props);
     this.state = {
       blogs: [],
-      loading: true
+      loading: true,
+      toastr: {
+        message: "",
+        actionTitle: "",
+        open: false
+      }
     };
     this.blogService = new BlogService();
   }
@@ -30,7 +38,12 @@ class Blog extends Component {
     this.blogService
       .getBlogs()
       .then(blogs => this.setState({ blogs, loading: false }))
-      .catch(err => this.setState({ loading: false }));
+      .catch(err =>
+        this.setState({
+          loading: false,
+          toastr: { message: err.message, open: true, action: "Rerty" }
+        })
+      );
   }
 
   render() {
@@ -38,6 +51,12 @@ class Blog extends Component {
 
     return (
       <div className={classes.root}>
+        <Toastr
+          open={this.state.toastr.open}
+          action={this.state.toastr.action}
+          message={this.state.toastr.message}
+          onActionClick={() => window.location.reload()}
+        />
         {this.state.loading && <Spinner />}
         <Grid container spacing={32}>
           {this.state.blogs.map((blog, i) => (

@@ -5,7 +5,8 @@ import {
   AccountCircle,
   EventNote,
   Home,
-  SpeakerNotes
+  SpeakerNotes,
+  Work
 } from "@material-ui/icons";
 import {
   Drawer,
@@ -27,11 +28,11 @@ const data = [
     text: "Home",
     href: "/"
   },
-  {
+  /* {
     icon: <AccountCircle />,
     text: "About",
     href: "/about"
-  },
+  }, */
   {
     icon: <EventNote />,
     text: "Speaking",
@@ -42,6 +43,11 @@ const data = [
     text: "Blog",
     href: "/blog"
   }
+  /* {
+    icon: <Work />,
+    text: "Work",
+    href: "/work"
+  } */
 ];
 
 const drawerWidth = 300;

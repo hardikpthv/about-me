@@ -7,7 +7,7 @@ const styles = {
   justifyContent: "center"
 };
 
-class Spinner extends React.Component {
+export default class Spinner extends React.Component {
   render() {
     return (
       <div style={styles}>
@@ -16,5 +16,3 @@ class Spinner extends React.Component {
     );
   }
 }
-
-export default Spinner;

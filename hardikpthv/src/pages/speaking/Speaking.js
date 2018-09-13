@@ -11,8 +11,10 @@ import SpeakingService from "./SpeakingService";
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    paddingLeft: 18,
-    paddingRight: 18
+    padding: "0 18px",
+    [theme.breakpoints.between("xs", "sm")]: {
+      padding: 0
+    }
   },
   eventContainer: {
     marginBottom: 30
@@ -56,14 +58,15 @@ class Speaking extends Component {
             Upcoming Events
           </Typography>
           <Grid container spacing={32} className={classes.event}>
-            {this.state.events.next.map((event, i) => (
-              <CommonCard
-                key={i}
-                title={event.title}
-                secondaryTitle={event.type}
-                description={event.description}
-              />
-            ))}
+            {this.state.events.next &&
+              this.state.events.next.map((event, i) => (
+                <CommonCard
+                  key={i}
+                  title={event.title}
+                  secondaryTitle={event.type}
+                  description={event.description}
+                />
+              ))}
           </Grid>
         </div>
         <div className={classes.event}>
@@ -71,21 +74,22 @@ class Speaking extends Component {
             Past Events
           </Typography>
           <Grid container spacing={32} className={classes.event}>
-            {this.state.events.past.map((event, i) => (
-              <CommonCard
-                key={i}
-                image={{
-                  url: `${MEDIA_URL}/${event.coverImage}`,
-                  alt: event.coverImageAlt,
-                  height: 250
-                }}
-                title={event.title}
-                secondaryTitle={event.type}
-                description={event.description}
-                actionOne={{ title: "DETAILS", url: event.meetupUrl }}
-                actionTwo={{ title: "VIEW SLIDES", url: event.slidesUrl }}
-              />
-            ))}
+            {this.state.events.past &&
+              this.state.events.past.map((event, i) => (
+                <CommonCard
+                  key={i}
+                  image={{
+                    url: `${MEDIA_URL}/${event.coverImage}`,
+                    alt: event.coverImageAlt,
+                    height: 250
+                  }}
+                  title={event.title}
+                  secondaryTitle={event.type}
+                  description={event.description}
+                  actionOne={{ title: "DETAILS", url: event.meetupUrl }}
+                  actionTwo={{ title: "VIEW SLIDES", url: event.slidesUrl }}
+                />
+              ))}
           </Grid>
         </div>
       </div>

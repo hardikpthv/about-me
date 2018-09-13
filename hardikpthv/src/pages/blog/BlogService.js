@@ -1,10 +1,6 @@
-import Rest from "../../utils";
+import Rest, { URL } from "../../utils";
 
-const MEDIA_URL = "https://cdn-images-1.medium.com/max/1600";
-const MEDIUM_URL = "https://medium.com/@hardikpthv";
-const DEFAULT_IMG = `${MEDIA_URL}/1*I0E7U5xI-4UvnkExSGKp_w.png`;
-
-class BlogService {
+export default class BlogService {
   constructor() {
     this.rest = new Rest();
   }
@@ -13,13 +9,15 @@ class BlogService {
     const { subtitle } = content; //TODO: need to update with ES208
     const { previewImage } = virtuals; //TODO: need to update with ES208
     const { imageId } = previewImage;
-    const coverImage = imageId ? MEDIA_URL + "/" + imageId : DEFAULT_IMG;
+    const coverImage = imageId
+      ? URL.mediumResource + "/" + imageId
+      : URL.mediumDefaultImage;
 
     return {
       title,
       subtitle,
       coverImage,
-      url: `${MEDIUM_URL}/${slug}-${id}`
+      url: `${URL.medium}/${slug}-${id}`
     };
   }
 
@@ -31,28 +29,27 @@ class BlogService {
   async getBlogs() {
     let posts = [];
     try {
-      const response = await this.rest.get(`${MEDIUM_URL}/latest?format=json`);
-      console.log("succ", response);
-      throw "evil";
+      const response = await this.rest.get(`${URL.medium}/latest?format=json`);
+
       if (response.success) {
         posts = this.getPosts(response);
         return Object.keys(this.getPosts(response)).map(post =>
           this.extractBlog(posts[post])
         );
+      } else {
+        throw "Something went wrong!";
       }
     } catch (error) {
-      console.log("err", error);
-      posts = this.getPosts(resp);
+      throw new Error(error);
+      /* posts = this.getPosts(resp);
       return Object.keys(this.getPosts(resp)).map(post =>
         this.extractBlog(posts[post])
-      );
+      ); */
     }
   }
 }
 
-export default BlogService;
-
-const resp = {
+/* const resp = {
   success: true,
   payload: {
     user: {
@@ -1791,3 +1788,4 @@ const resp = {
   v: 3,
   b: "34899-e9ef7b0"
 };
+ */
