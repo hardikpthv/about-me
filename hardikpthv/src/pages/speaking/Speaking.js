@@ -35,9 +35,12 @@ class Speaking extends Component {
   }
 
   componentDidMount() {
-    this.speakingService.getEvents().then(events => {
-      this.setState({ events: events, loading: false });
-    });
+    this.speakingService
+      .getEvents()
+      .then(events => {
+        this.setState({ events, loading: false });
+      })
+      .catch(err => this.setState({ loading: false }));
   }
 
   getEvents() {}
@@ -49,7 +52,7 @@ class Speaking extends Component {
       <div className={classes.root}>
         {this.state.loading && <Spinner />}
         <div className={classes.eventContainer}>
-          <Typography gutterBottom variant="headline" component="h2">
+          <Typography gutterBottom variant="display1" component="h2">
             Upcoming Events
           </Typography>
           <Grid container spacing={32} className={classes.event}>
@@ -64,7 +67,7 @@ class Speaking extends Component {
           </Grid>
         </div>
         <div className={classes.event}>
-          <Typography gutterBottom variant="headline" component="h2">
+          <Typography gutterBottom variant="display1" component="h2">
             Past Events
           </Typography>
           <Grid container spacing={32} className={classes.event}>
@@ -79,7 +82,8 @@ class Speaking extends Component {
                 title={event.title}
                 secondaryTitle={event.type}
                 description={event.description}
-                action={{ title: "DETAILS", url: event.meetupUrl }}
+                actionOne={{ title: "DETAILS", url: event.meetupUrl }}
+                actionTwo={{ title: "VIEW SLIDES", url: event.slidesUrl }}
               />
             ))}
           </Grid>

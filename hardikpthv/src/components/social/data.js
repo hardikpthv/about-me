@@ -1,3 +1,4 @@
+import { URL } from "../../utils";
 import Twitter from "../../assets/social/twitter.png";
 import GitHub from "../../assets/social/github.png";
 import LinkedIn from "../../assets/social/linkedin.png";
@@ -5,18 +6,18 @@ import LinkedIn from "../../assets/social/linkedin.png";
 
 export default [
   {
+    title: "Twitter",
+    href: URL.twitter,
+    logo: Twitter
+  },
+  {
     title: "Github",
-    href: "https://github.com/hardikpthv",
+    href: URL.github,
     logo: GitHub
   },
   {
     title: "LinkedIn",
-    href: "http://linkedin.com/in/hardikpthv",
+    href: URL.linkedIn,
     logo: LinkedIn
-  },
-  {
-    title: "Twitter",
-    href: "https://twitter.com/hardikpthv",
-    logo: Twitter
   }
 ];
