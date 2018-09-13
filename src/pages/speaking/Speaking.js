@@ -24,7 +24,7 @@ const styles = theme => ({
   }
 });
 
-const MEDIA_URL = "http://onlineedu.in/tutorials";
+const MEDIA_URL = "https://raw.githubusercontent.com/hardikpthv/about/master/assets/";
 
 class Speaking extends Component {
   constructor(props) {
