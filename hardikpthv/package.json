@@ -2,6 +2,7 @@
   "name": "hardikpthv",
   "version": "0.1.0",
   "private": false,
+  "license": "MIT",
   "author": {
     "name": "Hardik Pithva"
   },
