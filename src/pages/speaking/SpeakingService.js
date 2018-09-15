@@ -6,8 +6,6 @@ export default class SpeakingService {
   }
 
   getEvents() {
-    return this.rest.get(
-      "https://raw.githubusercontent.com/hardikpthv/about/master/src/assets/data/events.json"
-    );
+    return this.rest.get(`${URL.api}/speaking`);
   }
 }

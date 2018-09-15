@@ -13,7 +13,7 @@ const drawerWidth = 300;
 
 const styles = theme => ({
   appBar: {
-    position: "absolute",
+    position: "fixed",
     marginLeft: drawerWidth,
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - ${drawerWidth}px)`
@@ -59,13 +59,21 @@ class AppToolbar extends React.Component {
               className={classes.rightButton}
               onClick={() => window.open(URL.github, "_blank")}
             >
-              <img src={GitHub} className={classes.rightButtonIcon} />
+              <img
+                src={GitHub}
+                alt="GitHub"
+                className={classes.rightButtonIcon}
+              />
             </IconButton>
             <IconButton
               className={classes.rightButton}
               onClick={() => window.open(URL.linkedIn, "_blank")}
             >
-              <img src={LinkedIn} className={classes.rightButtonIcon} />
+              <img
+                src={LinkedIn}
+                alt="LinkedIn"
+                className={classes.rightButtonIcon}
+              />
             </IconButton>
           </div>
         </Toolbar>

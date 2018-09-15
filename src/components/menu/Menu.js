@@ -9,7 +9,7 @@ export default class Menu extends Component {
       <div className="menu">
         <ul className="list">
           <li>
-            <Link to="/about">Explore</Link>
+            <Link to="/speaking">Explore</Link>
           </li>
         </ul>
       </div>

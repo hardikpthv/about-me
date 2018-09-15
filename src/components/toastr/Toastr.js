@@ -2,11 +2,6 @@ import React from "react";
 
 import { Button, Snackbar } from "@material-ui/core";
 
-const styles = {
-  display: "flex",
-  justifyContent: "center"
-};
-
 export default class Toastr extends React.Component {
   render() {
     const { message, action, open } = this.props;

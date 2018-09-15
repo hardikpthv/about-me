@@ -18,13 +18,8 @@ const styles = theme => ({
   },
   eventContainer: {
     marginBottom: 30
-  },
-  event: {
-    marginTop: 10
   }
 });
-
-const MEDIA_URL = "https://raw.githubusercontent.com/hardikpthv/about/master/assets/";
 
 class Speaking extends Component {
   constructor(props) {
@@ -55,9 +50,9 @@ class Speaking extends Component {
         {this.state.loading && <Spinner />}
         <div className={classes.eventContainer}>
           <Typography gutterBottom variant="display1" component="h2">
-            Upcoming Events
+            Upcoming Talks
           </Typography>
-          <Grid container spacing={32} className={classes.event}>
+          <Grid container spacing={32}>
             {this.state.events.next &&
               this.state.events.next.map((event, i) => (
                 <CommonCard
@@ -69,17 +64,17 @@ class Speaking extends Component {
               ))}
           </Grid>
         </div>
-        <div className={classes.event}>
+        <div className={classes.eventContainer}>
           <Typography gutterBottom variant="display1" component="h2">
-            Past Events
+            Past Talks
           </Typography>
-          <Grid container spacing={32} className={classes.event}>
+          <Grid container spacing={32}>
             {this.state.events.past &&
               this.state.events.past.map((event, i) => (
                 <CommonCard
                   key={i}
                   image={{
-                    url: `${MEDIA_URL}/${event.coverImage}`,
+                    url: event.coverImage,
                     alt: event.coverImageAlt,
                     height: 250
                   }}

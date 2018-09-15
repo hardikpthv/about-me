@@ -40,13 +40,13 @@ const data = [
   },
   {
     icon: <SpeakerNotes />,
-    text: "Blog",
-    href: "/blog"
+    text: "Blogs",
+    href: "/blogs"
   }
   /* {
     icon: <Work />,
-    text: "Work",
-    href: "/work"
+    text: "Projects",
+    href: "/projects"
   } */
 ];
 
@@ -66,7 +66,7 @@ const styles = theme => ({
     height: "100vh",
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
-      position: "relative"
+      position: "fixed"
     }
   }
 });

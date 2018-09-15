@@ -1,1 +1,1 @@
-## [Demo](http://hardikpthv.github.io/about)
+## [Demo](http://hardikpthv.github.io)

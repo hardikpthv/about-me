@@ -14,6 +14,7 @@ import SideNav from "../../components/sidenav";
 import Speaking from "../speaking";
 import About from "../about";
 import Blog from "../blog";
+import Project from "../project";
 
 const theme = createMuiTheme({
   palette: {
@@ -37,7 +38,9 @@ const styles = theme => ({
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
     height: "100vh",
-    overflow: "auto"
+    [theme.breakpoints.up("md")]: {
+      marginLeft: 300
+    }
   }
 });
 
@@ -49,6 +52,10 @@ class Dashboard extends React.Component {
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
+
+  componentDidMount() {
+    // window.twttr.widgets.load();
+  }
 
   render() {
     const { classes, location } = this.props;
@@ -71,7 +78,8 @@ class Dashboard extends React.Component {
               <Switch>
                 <Route path="/about" component={About} />
                 <Route path="/speaking" component={Speaking} />
-                <Route path="/blog" component={Blog} />
+                <Route path="/blogs" component={Blog} />
+                <Route path="/projects" component={Project} />
               </Switch>
             </main>
           </div>
