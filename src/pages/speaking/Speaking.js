@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
 
-import CommonCard from "../../components/card";
+import { CommonCard } from "../../components/card";
 import Spinner from "../../components/spinner";
 import SpeakingService from "./SpeakingService";
 
@@ -17,7 +17,7 @@ const styles = theme => ({
     }
   },
   eventContainer: {
-    marginBottom: 30
+    marginBottom: 35
   }
 });
 
@@ -40,8 +40,6 @@ class Speaking extends Component {
       .catch(err => this.setState({ loading: false }));
   }
 
-  getEvents() {}
-
   render() {
     const { classes } = this.props;
 
@@ -50,40 +48,44 @@ class Speaking extends Component {
         {this.state.loading && <Spinner />}
         <div className={classes.eventContainer}>
           <Typography gutterBottom variant="display1" component="h2">
-            Upcoming Talks
+            Upcoming talks
           </Typography>
           <Grid container spacing={32}>
             {this.state.events.next &&
               this.state.events.next.map((event, i) => (
-                <CommonCard
-                  key={i}
-                  title={event.title}
-                  secondaryTitle={event.type}
-                  description={event.description}
-                />
+                <Grid item xs={12} sm={6}>
+                  <CommonCard
+                    key={i}
+                    title={event.title}
+                    secondaryTitle={event.type}
+                    description={event.description}
+                  />
+                </Grid>
               ))}
           </Grid>
         </div>
         <div className={classes.eventContainer}>
           <Typography gutterBottom variant="display1" component="h2">
-            Past Talks
+            Past talks
           </Typography>
           <Grid container spacing={32}>
             {this.state.events.past &&
               this.state.events.past.map((event, i) => (
-                <CommonCard
-                  key={i}
-                  image={{
-                    url: event.coverImage,
-                    alt: event.coverImageAlt,
-                    height: 250
-                  }}
-                  title={event.title}
-                  secondaryTitle={event.type}
-                  description={event.description}
-                  actionOne={{ title: "DETAILS", url: event.meetupUrl }}
-                  actionTwo={{ title: "VIEW SLIDES", url: event.slidesUrl }}
-                />
+                <Grid item xs={12} sm={6}>
+                  <CommonCard
+                    key={i}
+                    image={{
+                      url: event.coverImage,
+                      alt: event.coverImageAlt,
+                      height: 250
+                    }}
+                    title={event.title}
+                    secondaryTitle={event.type}
+                    description={event.description}
+                    actionOne={{ title: "DETAILS", url: event.meetupUrl }}
+                    actionTwo={{ title: "VIEW SLIDES", url: event.slidesUrl }}
+                  />
+                </Grid>
               ))}
           </Grid>
         </div>

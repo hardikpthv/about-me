@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/hardikpthv/about.git"
   },
+  "homepage": "https://hardikpthv.github.io",
   "dependencies": {
     "@material-ui/core": "^3.0.3",
     "@material-ui/icons": "^3.0.1",

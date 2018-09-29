@@ -6,7 +6,7 @@ import { Grid } from "@material-ui/core";
 
 import Spinner from "../../components/spinner";
 import Toastr from "../../components/toastr";
-import CommonCard from "../../components/card";
+import { CommonCard } from "../../components/card";
 import BlogService from "./BlogService";
 
 const styles = theme => ({
@@ -60,17 +60,19 @@ class Blog extends Component {
         {this.state.loading && <Spinner />}
         <Grid container spacing={32}>
           {this.state.blogs.map((blog, i) => (
-            <CommonCard
-              key={i}
-              image={{
-                url: blog.coverImage,
-                alt: blog.title,
-                height: 200
-              }}
-              title={blog.title}
-              description={blog.subtitle}
-              actionOne={{ title: "VIEW ARTICLE", url: blog.url }}
-            />
+            <Grid item xs={12} sm={6}>
+              <CommonCard
+                key={i}
+                image={{
+                  url: blog.coverImage,
+                  alt: blog.title,
+                  height: 200
+                }}
+                title={blog.title}
+                description={blog.subtitle}
+                actionOne={{ title: "VIEW ARTICLE", url: blog.url }}
+              />
+            </Grid>
           ))}
         </Grid>
       </div>

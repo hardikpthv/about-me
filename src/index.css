@@ -1,4 +1,3 @@
-
 html,
 body,
 #root {
@@ -7,9 +6,6 @@ body,
 
 body {
   margin: 0;
-  padding: 0;    
-  /* color: #fff;
-  background: #396afc;
-  background: -webkit-linear-gradient(to right, #2948ff, #396afc);
-  background: linear-gradient(to right, #2948ff, #396afc); */
+  padding: 0;
+  overflow-y: auto;
 }

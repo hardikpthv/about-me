@@ -4,13 +4,13 @@ import {
   Card,
   CardActionArea,
   CardActions,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography
+  CardMedia
 } from "@material-ui/core";
 
-export default class CommonCard extends Component {
+import "./Card.css";
+import { CommonCardContent } from "./CardContent";
+
+export class CommonCard extends Component {
   render() {
     const {
       description,
@@ -18,55 +18,56 @@ export default class CommonCard extends Component {
       secondaryTitle,
       title,
       actionOne,
-      actionTwo
+      actionTwo,
+      metadata
     } = this.props;
+    console.log(metadata);
     return (
-      <Grid item xs={12} sm={6}>
-        <Card>
-          <CardActionArea>
-            {image && (
-              <CardMedia
-                style={{ height: image.height }}
-                image={image.url}
-                title={image.alt}
+      <Card>
+        <CardActionArea>
+          {image && (
+            <CardMedia
+              style={{ height: image.height }}
+              image={image.url}
+              title={image.alt}
+            />
+          )}
+          <CommonCardContent
+            title={title}
+            shortDesc={secondaryTitle}
+            description={description}
+          />
+          {metadata && (
+            <div className="metadata">
+              <img src={metadata.primary.icon} alt={metadata.primary.name} />
+              <img
+                src={metadata.secondary.icon}
+                alt={metadata.secondary.name}
               />
-            )}
-            <CardContent>
-              <Typography gutterBottom variant="headline" component="h2">
-                {title}
-              </Typography>
-              <Typography
-                gutterBottom
-                variant="subheading"
-                color="textSecondary"
-              >
-                {secondaryTitle}
-              </Typography>
-              <Typography component="p">{description}</Typography>
-            </CardContent>
-          </CardActionArea>
-          {actionOne && (
-            <CardActions>
+            </div>
+          )}
+        </CardActionArea>
+        {actionOne && (
+          <CardActions>
+            <Button
+              size="medium"
+              color="secondary"
+              onClick={() => window.open(actionOne.url, "_blank")}
+            >
+              {actionOne.title}
+            </Button>
+            {actionTwo && (
               <Button
                 size="medium"
                 color="secondary"
-                onClick={() => window.open(actionOne.url, "_blank")}
+                onClick={() => window.open(actionTwo.url, "_blank")}
               >
-                {actionOne.title}
+                {actionTwo.title}
               </Button>
-              {actionTwo && (
-                <Button
-                  size="medium"
-                  color="secondary"
-                  onClick={() => window.open(actionTwo.url, "_blank")}
-                >
-                  {actionTwo.title}
-                </Button>
-              )}
-            </CardActions>
-          )}
-        </Card>
-      </Grid>
+            )}
+          </CardActions>
+        )}
+      </Card>
     );
   }
 }

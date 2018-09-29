@@ -2,7 +2,7 @@ import { URL } from "../../utils";
 import Twitter from "../../assets/social/twitter.png";
 import GitHub from "../../assets/social/github.png";
 import LinkedIn from "../../assets/social/linkedin.png";
-// import SpeakerDeck from "../../assets/social/speakerdeck.svg";
+import SpeakerDeck from "../../assets/social/sd.png";
 
 export default [
   {
@@ -19,5 +19,10 @@ export default [
     title: "LinkedIn",
     href: URL.linkedIn,
     logo: LinkedIn
+  },
+  {
+    title: "SpeakerDeck",
+    href: URL.speakerDeck,
+    logo: SpeakerDeck
   }
 ];

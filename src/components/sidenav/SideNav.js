@@ -28,7 +28,7 @@ const data = [
     text: "Home",
     href: "/"
   },
-  /* {
+/*   {
     icon: <AccountCircle />,
     text: "About",
     href: "/about"
@@ -42,12 +42,12 @@ const data = [
     icon: <SpeakerNotes />,
     text: "Blogs",
     href: "/blogs"
-  }
-  /* {
+  },
+  {
     icon: <Work />,
     text: "Projects",
     href: "/projects"
-  } */
+  }
 ];
 
 const drawerWidth = 300;
