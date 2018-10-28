@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { withStyles } from "@material-ui/core/styles";
-import { Grid, Typography } from "@material-ui/core";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 
 import { CommonCard } from "../../components/card";
 import Spinner from "../../components/spinner";
+import Toastr from "../../components/toastr";
 import SpeakingService from "./SpeakingService";
 
 const styles = theme => ({
@@ -27,7 +29,12 @@ class Speaking extends Component {
     this.speakingService = new SpeakingService();
     this.state = {
       events: { next: [], past: [] },
-      loading: true
+      loading: true,
+      toastr: {
+        message: "",
+        actionTitle: "",
+        open: false
+      }
     };
   }
 
@@ -37,7 +44,12 @@ class Speaking extends Component {
       .then(events => {
         this.setState({ events, loading: false });
       })
-      .catch(err => this.setState({ loading: false }));
+      .catch(err =>
+        this.setState({
+          loading: false,
+          toastr: { message: err.message, open: true, action: "Rerty" }
+        })
+      );
   }
 
   render() {
@@ -45,6 +57,12 @@ class Speaking extends Component {
 
     return (
       <div className={classes.root}>
+        <Toastr
+          open={this.state.toastr.open}
+          action={this.state.toastr.action}
+          message={this.state.toastr.message}
+          onActionClick={() => window.location.reload()}
+        />
         {this.state.loading && <Spinner />}
         <div className={classes.eventContainer}>
           <Typography gutterBottom variant="display1" component="h2">
@@ -53,9 +71,8 @@ class Speaking extends Component {
           <Grid container spacing={32}>
             {this.state.events.next &&
               this.state.events.next.map((event, i) => (
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} key={i}>
                   <CommonCard
-                    key={i}
                     title={event.title}
                     secondaryTitle={event.type}
                     description={event.description}
@@ -71,9 +88,8 @@ class Speaking extends Component {
           <Grid container spacing={32}>
             {this.state.events.past &&
               this.state.events.past.map((event, i) => (
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} key={i}>
                   <CommonCard
-                    key={i}
                     image={{
                       url: event.coverImage,
                       alt: event.coverImageAlt,

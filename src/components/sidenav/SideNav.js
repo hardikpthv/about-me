@@ -28,11 +28,11 @@ const data = [
     text: "Home",
     href: "/"
   },
-/*   {
+  {
     icon: <AccountCircle />,
     text: "About",
     href: "/about"
-  }, */
+  },
   {
     icon: <EventNote />,
     text: "Speaking",
@@ -72,6 +72,10 @@ const styles = theme => ({
 });
 
 class SideNav extends Component {
+  componentDidMount() {
+    window.twttr && window.twttr.widgets.load();
+  }
+
   render() {
     const { classes, open } = this.props;
 

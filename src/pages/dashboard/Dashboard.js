@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 import { Switch, Route } from "react-router-dom";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
-import {
-  MuiThemeProvider,
-  createMuiTheme,
-  withStyles
-} from "@material-ui/core/styles";
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 import AppToolbar from "../../components/toolbar";
 import SideNav from "../../components/sidenav";
@@ -36,8 +34,7 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
-    height: "100vh",
+    padding: theme.spacing.unit * 3,    
     [theme.breakpoints.up("md")]: {
       marginLeft: 300
     }

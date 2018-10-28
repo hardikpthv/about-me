@@ -21,7 +21,6 @@ export class CommonCard extends Component {
       actionTwo,
       metadata
     } = this.props;
-    console.log(metadata);
     return (
       <Card>
         <CardActionArea>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { withStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Grid from "@material-ui/core/Grid";
 
 import Spinner from "../../components/spinner";
 import Toastr from "../../components/toastr";
@@ -46,6 +46,10 @@ class Blog extends Component {
       );
   }
 
+  componentWillUnmount() {
+    //TODO: Cancel rest apis if pending
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -60,13 +64,12 @@ class Blog extends Component {
         {this.state.loading && <Spinner />}
         <Grid container spacing={32}>
           {this.state.blogs.map((blog, i) => (
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} key={i}>
               <CommonCard
-                key={i}
                 image={{
                   url: blog.coverImage,
                   alt: blog.title,
-                  height: 200
+                  height: 250
                 }}
                 title={blog.title}
                 description={blog.subtitle}
